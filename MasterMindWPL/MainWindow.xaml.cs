@@ -20,21 +20,44 @@ namespace MasterMindWPL
     /// </summary>
     public partial class MainWindow : Window
     {
-        Color[] _availableColors = { Colors.Red, Colors.Yellow, Colors.White, Colors.Green, Colors.Blue };
+        Dictionary<Color, string> _availableColors = new Dictionary<Color, string>();
+        List<string> _code = new List<string>();
+        List<ComboBox> _comboBoxes = new List<ComboBox>();
         public MainWindow()
         {
             InitializeComponent();
-            
+            AddColorsToDictionary();
+
+            _comboBoxes.Add(cboColors1);
+            _comboBoxes.Add(cboColors2);
+            _comboBoxes.Add(cboColors3);
+            _comboBoxes.Add(cboColors4);
+
+            GenerateRandomCode();
+            foreach (string color in _code)
+            {
+                this.Title = this.Title + " " + color;
+            }
         }
 
-        public void AddColorsToComboBoxes()
+        public void AddColorsToDictionary()
         {
-            foreach (Color color in _availableColors)
+            _availableColors.Clear();
+            _availableColors.Add(Colors.Red, "Red");
+            _availableColors.Add(Colors.Blue, "Blue");
+            _availableColors.Add(Colors.Green, "Green");
+            _availableColors.Add(Colors.Yellow, "Yellow");
+            _availableColors.Add(Colors.Orange, "Orange");
+            _availableColors.Add(Colors.White, "White");
+        }
+
+        public void GenerateRandomCode()
+        {
+            Random rand = new Random();
+            for (int i = 0; i < 4; i++)
             {
-                cboColors1.Items.Add(color);
-                cboColors2.Items.Add(color);
-                cboColors3.Items.Add(color);
-                cboColors4.Items.Add(color);
+                int j = rand.Next(0,4);
+                _code.Add(_availableColors.ElementAt(j).Value);
             }
         }
     }
