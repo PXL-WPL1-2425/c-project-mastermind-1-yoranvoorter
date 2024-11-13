@@ -22,17 +22,11 @@ namespace MasterMindWPL
     {
         Dictionary<Color, string> _availableColors = new Dictionary<Color, string>();
         List<string> _code = new List<string>();
-        List<ComboBox> _comboBoxes = new List<ComboBox>();
         public MainWindow()
         {
             InitializeComponent();
             AddColorsToDictionary();
-
-            _comboBoxes.Add(cboColors1);
-            _comboBoxes.Add(cboColors2);
-            _comboBoxes.Add(cboColors3);
-            _comboBoxes.Add(cboColors4);
-
+            FillComboBoxes();
             GenerateRandomCode();
             foreach (string color in _code)
             {
@@ -58,6 +52,17 @@ namespace MasterMindWPL
             {
                 int j = rand.Next(0,4);
                 _code.Add(_availableColors.ElementAt(j).Value);
+            }
+        }
+
+        public void FillComboBoxes()
+        {
+            foreach (KeyValuePair<Color, string> color in _availableColors)
+            {
+                cboColors1.Items.Add(color.Value);
+                cboColors2.Items.Add(color.Value);
+                cboColors3.Items.Add(color.Value);
+                cboColors4.Items.Add(color.Value);
             }
         }
     }
