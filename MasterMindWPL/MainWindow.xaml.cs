@@ -65,5 +65,29 @@ namespace MasterMindWPL
                 cboColors4.Items.Add(color.Value);
             }
         }
+
+        private void cboColors1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Color color = _availableColors.FirstOrDefault(x => x.Value == cboColors1.SelectedItem).Key;
+            ellipseColor1.Fill = new SolidColorBrush(color);
+        }
+
+        private void cboColors2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Color color = _availableColors.FirstOrDefault(x => x.Value == cboColors2.SelectedItem).Key;
+            ellipseColor2.Fill = new SolidColorBrush(color);
+        }
+
+        private void cboColors3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Color color = _availableColors.FirstOrDefault(x => x.Value == cboColors3.SelectedItem).Key;
+            ellipseColor3.Fill = new SolidColorBrush(color);
+        }
+
+        private void cboColors4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Color color = _availableColors.FirstOrDefault(x => x.Value == cboColors4.SelectedItem).Key;
+            ellipseColor4.Fill = new SolidColorBrush(color);
+        }
     }
 }

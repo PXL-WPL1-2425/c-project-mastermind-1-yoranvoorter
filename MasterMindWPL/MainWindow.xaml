@@ -18,14 +18,14 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox Name="cboColors1"></ComboBox>
-        <ComboBox Name="cboColors2"  Grid.Column="1"></ComboBox>
-        <ComboBox Name="cboColors3"  Grid.Column="2"></ComboBox>
-        <ComboBox Name="cboColors4" Grid.Column="3"></ComboBox>
-        <Ellipse Grid.Row="1"></Ellipse>
-        <Ellipse Grid.Row="1" Grid.Column="1"></Ellipse>
-        <Ellipse Grid.Row="1" Grid.Column="2"></Ellipse>
-        <Ellipse Grid.Row="1" Grid.Column="3"></Ellipse>
+        <ComboBox Name="cboColors1" SelectionChanged="cboColors1_SelectionChanged"></ComboBox>
+        <ComboBox Name="cboColors2"  Grid.Column="1" SelectionChanged="cboColors2_SelectionChanged"></ComboBox>
+        <ComboBox Name="cboColors3"  Grid.Column="2" SelectionChanged="cboColors3_SelectionChanged"></ComboBox>
+        <ComboBox Name="cboColors4" Grid.Column="3" SelectionChanged="cboColors4_SelectionChanged"></ComboBox>
+        <Ellipse Name="ellipseColor1" Grid.Row="1" Margin="50"></Ellipse>
+        <Ellipse Name="ellipseColor2" Grid.Row="1" Grid.Column="1" Margin="50"></Ellipse>
+        <Ellipse Name="ellipseColor3" Grid.Row="1" Grid.Column="2" Margin="50"></Ellipse>
+        <Ellipse Name="ellipseColor4" Grid.Row="1" Grid.Column="3" Margin="50"></Ellipse>
         <Button Name="btnCheckCode" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="50,70">Check code</Button>
     </Grid>
 </Window>
