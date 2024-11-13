@@ -89,5 +89,60 @@ namespace MasterMindWPL
             Color color = _availableColors.FirstOrDefault(x => x.Value == cboColors4.SelectedItem).Key;
             ellipseColor4.Fill = new SolidColorBrush(color);
         }
+
+        private void btnCheckCode_Click(object sender, RoutedEventArgs e)
+        {
+            if (_code[0] == cboColors1.SelectedItem)
+            {
+                ellipseColor1.Stroke = new SolidColorBrush(Colors.DarkRed);
+            }
+            else if (_code.Contains(cboColors1.SelectedItem))
+            {
+                ellipseColor1.Stroke = new SolidColorBrush(Colors.Wheat);
+            }
+            else
+            {
+                ellipseColor1.Stroke = null;
+            }
+
+            if (_code[1] == cboColors2.SelectedItem)
+            {
+                ellipseColor2.Stroke = new SolidColorBrush(Colors.DarkRed);
+            }
+            else if (_code.Contains(cboColors2.SelectedItem))
+            {
+                ellipseColor2.Stroke = new SolidColorBrush(Colors.Wheat);
+            }
+            else
+            {
+                ellipseColor2.Stroke = null;
+            }
+
+            if (_code[2] == cboColors3.SelectedItem)
+            {
+                ellipseColor3.Stroke = new SolidColorBrush(Colors.DarkRed);
+            }
+            else if (_code.Contains(cboColors3.SelectedItem))
+            {
+                ellipseColor3.Stroke = new SolidColorBrush(Colors.Wheat);
+            }
+            else
+            {
+                ellipseColor3.Stroke = null;
+            }
+
+            if (_code[3] == cboColors4.SelectedItem)
+            {
+                ellipseColor4.Stroke = new SolidColorBrush(Colors.DarkRed);
+            }
+            else if (_code.Contains(cboColors4.SelectedItem))
+            {
+                ellipseColor4.Stroke = new SolidColorBrush(Colors.Wheat);
+            }
+            else
+            {
+                ellipseColor4.Stroke = null;
+            }
+        }
     }
 }
